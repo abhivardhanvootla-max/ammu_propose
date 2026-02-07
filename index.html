@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>For Thathsavi ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -106,14 +107,20 @@ animation:float 3s ease-in-out infinite;
 <div class="card hidden" id="gallery">
 <img id="pic">
 <p id="caption"></p>
+
 <button onclick="prev()">⬅️</button>
 <button onclick="next()">➡️</button>
+
+<br><br>
+<button onclick="openMessage()">
+Here is for you Ammulu, may you love it 💕
+</button>
 </div>
 
 <!-- MESSAGE -->
 <div class="card hidden" id="message">
 <p style="font-size:14px;line-height:1.7">
-hi potti today is 07 feb 2026 and i am very happy and thank ful to have you and may be this is a wonderful day...  
+hi potti today is 07 feb 2026 and i am very happy and thank ful to have you and may be this is a wonderful day. and today is i m very exiciting because i m meeting you today and i am very lucky to have you.  
 <br><br>
 <b>LOVE YOU AMMULU ❤️</b>
 </p>
@@ -170,7 +177,7 @@ i=(i-1+images.length)%images.length;
 show();
 }
 
-gallery.ondblclick=()=>{
+function openMessage(){
 gallery.classList.add("hidden");
 message.classList.remove("hidden");
 }
