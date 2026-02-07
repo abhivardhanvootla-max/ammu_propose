@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Thathsavi ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+background:linear-gradient(135deg,#14001f,#3a0a5e,#6a1b9a);
+color:white;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.card{
+width:90%;
+max-width:420px;
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+box-shadow:0 0 30px rgba(255,105,180,0.35);
+text-align:center;
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(0.9)}
+to{opacity:1;transform:scale(1)}
+}
+
+input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+margin-top:15px;
+text-align:center;
+font-size:16px;
+}
+
+button{
+padding:10px 22px;
+border:none;
+border-radius:25px;
+background:hotpink;
+color:white;
+font-size:15px;
+margin:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{transform:scale(1.1)}
+.no-btn{background:#444}
+
+img{
+width:100%;
+border-radius:15px;
+margin:15px 0;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+}
+
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div class="card" id="lock">
+<h2>🔐 Only One Heart Can Enter 💖</h2>
+<p>Password please Ammulu 🥺</p>
+<input id="pass" placeholder="Type here...">
+<button onclick="unlock()">Unlock ❤️</button>
+</div>
+
+<!-- QUESTION -->
+<div class="card hidden" id="question">
+<h2>Did you love me? 🥺❤️</h2>
+<button onclick="goImages()">YES 💕</button>
+<button class="no-btn" onclick="showCat()">NO 😶</button>
+</div>
+
+<!-- FUNNY CAT -->
+<div class="card hidden" id="cat">
+<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif">
+<h3>Please accept my love Ammu 🥺💔</h3>
+<button onclick="goImages()">OK 🥹</button>
+<button class="no-btn">NO 😐</button>
+</div>
+
+<!-- IMAGES -->
+<div class="card hidden" id="gallery">
+<img id="pic">
+<p id="caption"></p>
+<button onclick="prev()">⬅️</button>
+<button onclick="next()">➡️</button>
+</div>
+
+<!-- MESSAGE -->
+<div class="card hidden" id="message">
+<p style="font-size:14px;line-height:1.7">
+hi potti today is 07 feb 2026 and i am very happy and thank ful to have you and may be this is a wonderful day...  
+<br><br>
+<b>LOVE YOU AMMULU ❤️</b>
+</p>
+<button onclick="final()">Ok bye… Love you ❤️😘</button>
+</div>
+
+<!-- END -->
+<div class="card hidden" id="end">
+<h2>Forever Starts With Us 💍❤️</h2>
+<p>Happy Propose Day Thathsavi 🥰</p>
+</div>
+
+<script>
+const PASSWORD="love you ammulu";
+
+function unlock(){
+if(pass.value.toLowerCase()==PASSWORD){
+lock.classList.add("hidden");
+question.classList.remove("hidden");
+}else alert("Wrong password potti 😝");
+}
+
+function showCat(){
+question.classList.add("hidden");
+cat.classList.remove("hidden");
+}
+
+function goImages(){
+cat.classList.add("hidden");
+question.classList.add("hidden");
+gallery.classList.remove("hidden");
+show();
+}
+
+let i=0;
+const images=["images/img1.jpg","images/img2.jpg"];
+const texts=[
+"The moment my heart chose you 💕",
+"My favorite place is next to you ❤️"
+];
+
+function show(){
+pic.src=images[i];
+caption.innerText=texts[i];
+}
+
+function next(){
+i=(i+1)%images.length;
+show();
+}
+
+function prev(){
+i=(i-1+images.length)%images.length;
+show();
+}
+
+gallery.ondblclick=()=>{
+gallery.classList.add("hidden");
+message.classList.remove("hidden");
+}
+
+function final(){
+message.classList.add("hidden");
+end.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
